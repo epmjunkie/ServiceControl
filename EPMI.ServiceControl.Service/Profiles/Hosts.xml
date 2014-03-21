@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hosts>
+  <group name="My Hosts" default="true">
+    <host name="Localhost" value="127.0.0.1" />
+  </group>
+</hosts>

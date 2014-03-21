@@ -1,0 +1,56 @@
+﻿<Window x:Class="EPMI.ServiceControl.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:System;assembly=mscorlib"
+        Height="497" Width="586"
+        Icon="/ServiceControl.WPF;component/EPMI.ico" 
+        Title="EPM Intelligence Service Controller">
+    <Window.Resources>
+        <my:Double x:Key="Height">100</my:Double>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="201" />
+            <ColumnDefinition Width="363*" />
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Column="1" Margin="0,25,12,190" Header="Services" Name="groupBox1">
+            <Grid HorizontalAlignment="Stretch" Name="grid1" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="194*" />
+                </Grid.RowDefinitions>
+                <ComboBox Grid.Row="0" Height="23" Margin="0,2" DisplayMemberPath="Name" HorizontalAlignment="Left" ItemsSource="{Binding}" MaxWidth="Infinity" MinWidth="150" Name="cbxService" SelectionChanged="cbxService_SelectionChanged" UseLayoutRounding="False" VerticalAlignment="Top" />
+                <ListBox Name="lbxServices" DisplayMemberPath="Name" DataContext="{Binding NotifyOnSourceUpdated=True}" Grid.Row="1" />
+            </Grid>
+        </GroupBox>
+        <Menu Grid.ColumnSpan="2" Height="23" Name="menu1" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Click="BtnMuSave" Header="Save" Name="MuSave" />
+            </MenuItem>
+        </Menu>
+        <Button Grid.Column="1" Height="23" Margin="0,0,18,167" Width="97" Click="BtnStart_Click" Content="Start Services" HorizontalAlignment="Right" Name="BtnStart" VerticalAlignment="Bottom" />
+        <Button Grid.Column="1" Height="23" Margin="0,0,123,167" Width="92" Click="BtnStop_Click" Content="Stop Services" HorizontalAlignment="Right" Name="BtnStop" VerticalAlignment="Bottom" />
+        <GroupBox Grid.ColumnSpan="2" Height="120" Margin="12,0,18,41" Header="Log" Name="gbLog" VerticalAlignment="Bottom">
+            <TextBox Height="Auto" Width="Auto" Name="tbxLog" TextChanged="tbxLog_TextInput" VerticalScrollBarVisibility="Auto" />
+        </GroupBox>
+        <ProgressBar Grid.ColumnSpan="2" Height="22" Margin="12,0,18,12" Name="progressBar1" VerticalAlignment="Bottom" />
+        <GroupBox Margin="6,25,0,190" Width="180" Header="Servers" HorizontalAlignment="Left" Name="gbxHosts">
+            <Grid Height="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="176*" />
+                </Grid.RowDefinitions>
+                <ComboBox Height="23" Margin="2,3,0,0" DisplayMemberPath="Name" Name="cbxHost" SelectionChanged="cbxHost_SelectionChanged" Text="" VerticalAlignment="Top" />
+                <ListBox Grid.Row="1" Width="168" DataContext="{Binding NotifyOnSourceUpdated=True}" DisplayMemberPath="Name" HorizontalAlignment="Right" Name="lbxHosts" Height="188" VerticalAlignment="Top" SelectionChanged="lbxHosts_SelectionChanged">
+                    <ListBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Add" Click="MenuItem_Host_Add" />
+                            <MenuItem Header="Edit" Click="MenuItem_Host_Edit" Name="miHost_Edit" IsEnabled="False" />
+                            <MenuItem Header="Remove" Click="MenuItem_Host_Remove" Name="miHost_Remove" IsEnabled="False"/>
+                        </ContextMenu>
+                    </ListBox.ContextMenu>
+                </ListBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

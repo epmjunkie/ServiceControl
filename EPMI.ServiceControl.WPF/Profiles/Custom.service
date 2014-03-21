@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<profiles>
+  <profile name="Test Profile" default="false">
+    <service name="ASP.NET State Service" value="ASP.NET State Service" timeOut="20000" startDelay="10" stopDelay="0" />
+    <service name="World Wide Web Publishing Service" value="World Wide Web Publishing Service" timeOut="5000" startDelay="10" stopDelay="0" />
+  </profile>
+</profiles>
