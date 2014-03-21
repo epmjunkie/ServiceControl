@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<profiles>
+  <profile name="Oracle EPM 11.1.2.0" default="true">
+    <service name="Foundation Services" value="Hyperion Foundation Services - Managed Server" timeOut="20000" startDelay="20" stopDelay="0" />
+    <service name="Reporting and Analysis Framework" value="Hyperion Reporting and Analysis Framework" timeOut="5" startDelay="5" stopDelay="0" />
+    <service name="Reporting and Analysis Framework - Web Application" value="Hyperion Reporting and Analysis Framework - Web Application" timeOut="15000" startDelay="15" stopDelay="0" />
+    <service name="EPM Architect - Process Manager" value="Hyperion EPM Architect - Process Manager" timeOut="45000" startDelay="45" stopDelay="0" />
+    <service name="Hyperion RMI Registry" value="Hyperion RMI Registry" timeOut="5000" startDelay="5" stopDelay="0" />
+    <service name="Oracle Process Manager" value="Oracle Process Manager (ohsInstance1649849633)" timeOut="10000" startDelay="10" stopDelay="0" />
+    <service name="Hyperion EPMA Data Synchronizer - Web Application" value="Hyperion EPMA Data Synchronizer - Web Application" timeOut="15000" startDelay="15" stopDelay="0" />
+    <service name="Hyperion EPMA Web Tier - Web Application" value="Hyperion EPMA Web Tier - Web Application" timeOut="15000" startDelay="15" stopDelay="0" />
+    <service name="Hyperion CALC Manager - Web Application" value="Hyperion CALC Manager - Web Application" timeOut="15000" startDelay="15" stopDelay="0" />
+    <service name="Hyperion Financial Reporting - Web Application" value="Hyperion Financial Reporting - Web Application" timeOut="15000" startDelay="15" stopDelay="0" />
+    <service name="Hyperion Financial Reporting - Print Service" value="Hyperion Financial Reporting - Print Service" timeOut="5000" startDelay="5" stopDelay="0" />
+  </profile>
+  <profile name="Oracle EPM 11.1.2.1" default="false">
+    <service name="Oracle Process Manager" value="Oracle Process Manager (ohsInstance1649849633)" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Hyperion Foundation Services - Managed Server" value="Hyperion Foundation Services - Managed Server" timeOut="20" startDelay="20" stopDelay="5" />
+    <service name="Reporting and Analysis Framework" value="Hyperion Reporting and Analysis Framework" timeOut="5" startDelay="5" stopDelay="5" />
+    <service name="Reporting and Analysis Framework - Web Application" value="Hyperion Reporting and Analysis Framework - Web Application" timeOut="15" startDelay="15" stopDelay="5" />
+    <service name="Hyperion EPMA Server" value="Hyperion EPMA Server" timeOut="45" startDelay="45" stopDelay="0" />
+    <service name="Hyperion RMI Registry" value="Hyperion RMI Registry" timeOut="5" startDelay="5" stopDelay="0" />
+    <service name="Hyperion EPMA Data Synchronizer - Web Application" value="Hyperion EPMA Data Synchronizer - Web Application" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Hyperion EPMA Web Tier - Web Application" value="Hyperion EPMA Web Tier - Web Application" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Hyperion CALC Manager - Web Application" value="Hyperion CALC Manager - Web Application" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Hyperion Financial Reporting - Web Application" value="Hyperion Financial Reporting - Web Application" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Hyperion Financial Reporting - Print Service" value="Hyperion Financial Reporting - Print Service" timeOut="5" startDelay="5" stopDelay="0" />
+    <service name="Hyperion Web Analysis - Web Application" value="Hyperion Web Analysis - Web Application" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Hyperion Administration Services - Web Application" value="Hyperion Administration Services - Web Application" timeOut="20" startDelay="20" stopDelay="0" />
+    <service name="Hyperion Provider Services - Web Application" value="Hyperion Provider Services - Web Application" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Hyperion Planning - Web Application" value="Hyperion Planning - Web Application" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Hyperion Studio Service BPMS bpms1" value="Hyperion Studio Service BPMS bpms1" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Hyperion ERP Integrator - Web Application" value="Hyperion ERP Integrator - Web Application" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Hyperion Financial Data Quality Management - Task Manager" value="Hyperion Financial Data Quality Management - Task Manager" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Hyperion Financial Management - DME Listener" value="Hyperion Financial Management - DME Listener" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Hyperion Financial Management - Management Service" value="Hyperion Financial Management - Management Service" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Hyperion Financial Management- Web Services" value="Hyperion Financial Management- Web Services" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Hyperion Financial Management - Web Service Manager" value="Hyperion Financial Management - Web Service Manager" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Hyperion Strategic Finance Service" value="Hyperion Strategic Finance Service" timeOut="10" startDelay="10" stopDelay="0" />
+  </profile>
+  <profile name="Test Profile" default="false">
+    <service name="ASP.NET State Service" value="ASP.NET State Service" timeOut="20000" startDelay="10" stopDelay="0" />
+    <service name="World Wide Web Publishing Service" value="World Wide Web Publishing Service" timeOut="5000" startDelay="10" stopDelay="0" />
+  </profile>
+</profiles>
