@@ -61,7 +61,7 @@
     <Reference Include="Microsoft.Practices.Unity.Interception">
       <HintPath>..\3rd Party\Enterprise Library5\Microsoft.Practices.Unity.Interception.dll</HintPath>
     </Reference>
-    <Reference Include="Renci.SshNet, Version=2013.1.27.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Renci.SshNet">
       <HintPath>..\3rd Party\SSH\Renci.SshNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
