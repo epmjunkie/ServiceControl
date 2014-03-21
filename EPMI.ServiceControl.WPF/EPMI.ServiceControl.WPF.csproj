@@ -198,6 +198,11 @@
   <ItemGroup>
     <Resource Include="EPMI.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Renci.SshNet.license">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\mt.exe" -manifest "$(ProjectDir)app.manifest" -updateresource:"$(TargetDir)$(TargetName).exe;#1"</PostBuildEvent>
