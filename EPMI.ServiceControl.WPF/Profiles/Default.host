@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-16"?>
+<profiles>
+  <profile name="Default" default="true">
+    <host name="Localhost" value="127.0.0.1" />
+    <host name="Hyperion Test" value="192.168.10.30" ssh="true" username="hyperion" password="nl8QBmiCAL$KbM4mMgd7Nr5ZQZfHA+tag==" />
+  </profile>
+  <profile name="Alternate" default="true">
+    <host name="keith.dev-x.net" value="keith.dev-x.net" ssh="true" username="kkikta" password="" path="/home/kkikta/oracle/" />
+  </profile>
+</profiles>
