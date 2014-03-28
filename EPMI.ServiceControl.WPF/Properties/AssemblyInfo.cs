@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EPM Intelligence, LLC.")]
-[assembly: AssemblyProduct("ServiceControl")]
+[assembly: AssemblyProduct("EPM Intelligence Service Control")]
 [assembly: AssemblyCopyright("Copyright © EPM Intelligence, LLC. 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

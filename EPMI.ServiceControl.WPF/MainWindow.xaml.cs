@@ -157,6 +157,11 @@ namespace EPMI.ServiceControl.WPF
             //Properties.Settings.Default.Servers = sc;
             //Properties.Settings.Default.Save();
         }
+        private void BtnMuAbout(object sender, RoutedEventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
+        }
         private void LogHandler(object sender, ServiceControl.BusinessObjects.LogEventArgs e)
         {
             if (tbxLog.Dispatcher.Thread == System.Threading.Thread.CurrentThread)

@@ -27,6 +27,9 @@
             <MenuItem Header="File">
                 <MenuItem Click="BtnMuSave" Header="Save" Name="MuSave" />
             </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Click="BtnMuAbout" Header="About EPM Service Control" Name="MuAbout" />
+            </MenuItem>
         </Menu>
         <Button Grid.Column="1" Height="23" Margin="0,0,18,167" Width="97" Click="BtnStart_Click" Content="Start Services" HorizontalAlignment="Right" Name="BtnStart" VerticalAlignment="Bottom" />
         <Button Grid.Column="1" Height="23" Margin="0,0,123,167" Width="92" Click="BtnStop_Click" Content="Stop Services" HorizontalAlignment="Right" Name="BtnStop" VerticalAlignment="Bottom" />
