@@ -40,7 +40,7 @@
     <service name="Hyperion Strategic Finance Service" value="Hyperion Strategic Finance Service" timeOut="10" startDelay="10" stopDelay="0" />
     <service name="Hyperion Essbase" value="Oracle Process Manager \(EPM_epmsystem\d+\)" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
   </profile>
-  <profile name="Oracle EPM 11.1.2.2" default="true">
+  <profile name="Oracle EPM 11.1.2.2" default="false">
     <service name="Oracle Process Manager" value="Oracle Process Manager \(ohsInstance\d+\)" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
     <service name="Hyperion Foundation Services - Managed Server" value="Hyperion Foundation Services - Managed Server" timeOut="20" startDelay="20" stopDelay="5" />
     <service name="Reporting and Analysis Framework" value="Hyperion Reporting and Analysis Framework" timeOut="5" startDelay="5" stopDelay="5" />
@@ -64,8 +64,32 @@
     <service name="Hyperion Financial Management - Web Service Manager" value="Hyperion Financial Management - Web Service Manager" timeOut="10" startDelay="10" stopDelay="0" />
     <service name="Hyperion Financial Management - Web Tier" value="Hyperion Financial Management - Web Tier" timeOut="10" startDelay="10" stopDelay="0" />
     <service name="Hyperion Strategic Finance Service" value="Hyperion Strategic Finance Service" timeOut="10" startDelay="10" stopDelay="0" />
-    <service name="Hyperion Essbase" value="Oracle Process Manager \(EPM_epmsystem\d+\)" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />4
+    <service name="Hyperion Essbase" value="Oracle Process Manager \(EPM_epmsystem\d+\)" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
     <service name="Hyperion Essbase (Unix)" value="startEssbase.sh" isUnix="true" timeOut="10" startDelay="10" stopDelay="0" />
     <service name="ODI Agent" value="OracleDI Agent (J2EE)" timeOut="10" startDelay="10" stopDelay="0" />
+  </profile>
+  <profile name="Oracle EPM 11.1.2.3" default="true">
+    <service name="Oracle HTTP" value="OracleProcessManager_ohsInstance\d+" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Foundation Services" value="HyS9FoundationServices_\S+" isRegEx="true" timeOut="20" startDelay="20" stopDelay="5" />
+    <service name="Reporting and Analysis Framework Agent" value="HyS9RaFrameworkAgent_\S+" isRegEx="true" timeOut="5" startDelay="5" stopDelay="5" />
+    <service name="Reporting and Analysis Framework" value="HyS9RaFramework_\S+" isRegEx="true" timeOut="15" startDelay="15" stopDelay="5" />
+    <service name="EPMA Server" value="HyS9EPMAServer_\S+" isRegEx="true" timeOut="45" startDelay="45" stopDelay="0" />
+    <service name="RMI Registry" value="HyS9RMIRegistry_\S+" isRegEx="true" timeOut="5" startDelay="5" stopDelay="0" />
+    <service name="EPMA Data Synchronizer" value="HyS9EPMADataSynchronizer_\S+" isRegEx="true" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="EPMA Web Tier" value="HyS9EPMAWebTier_\S+" isRegEx="true" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="CALC Manager" value="HyS9CALC_\S+" isRegEx="true" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Financial Reporting" value="HyS9FRReports_\S+" isRegEx="true" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Web Analysis" value="HyS9WebAnalysis_\S+" isRegEx="true" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Essbase Administration Services" value="HyS9eas_\S+" isRegEx="true" timeOut="20" startDelay="20" stopDelay="0" />
+    <service name="Essbase Provider Services" value="HyS9aps_\S+" isRegEx="true" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Planning" value="HyS9Planning_\S+" isRegEx="true" timeOut="15" startDelay="15" stopDelay="0" />
+    <service name="Essbase Studio" value="HyS9EssbaseStudio_\S+" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="FDM Enterprise Edition" value="HyS9aifWeb_\S+" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="HFM DME Listener" value="HyS9FinancialManagementDMEListener_\S+" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="HFM Management Service" value="HyS9FinancialManagementService_\S+" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="HFM Web Service Manager" value="HyS9FinancialManagementWebServiceManager_\S+" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="HFM Web Tier" value="HyS9FinancialManagementWeb_\S+" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Essbase" value="OracleProcessManager_EPM_\S+" isRegEx="true" timeOut="10" startDelay="10" stopDelay="0" />
+    <service name="Essbase (Unix)" value="startEssbase.sh" isUnix="true" timeOut="10" startDelay="10" stopDelay="0" />
   </profile>
 </profiles>
