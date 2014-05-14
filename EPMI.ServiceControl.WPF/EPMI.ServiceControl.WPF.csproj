@@ -203,6 +203,7 @@
     </None>
     <None Include="Profiles\Custom.service">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>

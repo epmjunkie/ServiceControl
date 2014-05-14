@@ -78,7 +78,7 @@ namespace EPMI.ServiceControl.Utility
                 foreach (BO.Host host in hosts)
                     if (!host.IsSSH)
                         foreach (var item in host.Services)
-                            if ((!service.isRegEx ?? false && service.Value == item.Name) || ((service.isRegEx ?? false) && System.Text.RegularExpressions.Regex.IsMatch(item.Name, service.Value)))
+                            if (IsMatch(service, item))
                             {
                                 BO.Service s = new BO.Service
                                 {
@@ -97,6 +97,24 @@ namespace EPMI.ServiceControl.Utility
 
             }
             return queue;
+        }
+        bool IsMatch(BO.Service service, BO.Service item)
+        {
+            if (!service.isRegEx ?? false) // Is not regex
+            {
+                if (service.Value == item.Name) // Determine if XML value matches Service Description
+                    return true;
+                else if (service.Value == item.Value) // Determine if XML value matches Service Name
+                    return true;
+            }
+            else
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(item.Name, service.Value)) // Determine if XML pattern matches Service Description
+                    return true;
+                else if (System.Text.RegularExpressions.Regex.IsMatch(item.Value, service.Value)) // Determine if XML pattern matches Service Name
+                    return true;
+            }
+            return false;
         }
         #endregion
 
