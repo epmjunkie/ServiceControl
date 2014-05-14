@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Xml;
 using System.IO;
+using System.Net.Sockets;
 
 namespace EPMI.ServiceControl.BusinessObjects
 {
@@ -48,10 +49,17 @@ namespace EPMI.ServiceControl.BusinessObjects
         {
             using (Renci.SshNet.SshClient client = new Renci.SshNet.SshClient(Value, Username, EPMI.Core.Encryption.AES.DecryptString(Password)))
             {
-                client.Connect();
-                var cmd = client.RunCommand(string.Format("{0}start.sh", Path));
-                OnLog(new LogEventArgs(string.Format("Attempting to start all serivices on {0}", Name)));
-                client.Disconnect();
+                try
+                {
+                    client.Connect();
+                    var cmd = client.RunCommand(string.Format("{0}start.sh", Path));
+                    OnLog(new LogEventArgs(string.Format("Attempting to start all serivices on {0}", Name)));
+                    client.Disconnect();
+                }
+                catch (SocketException)
+                {
+                    OnLog(new LogEventArgs(string.Format("Unable to connect to server {0}", Value)));
+                }
             }
             return true;
         }
@@ -59,10 +67,17 @@ namespace EPMI.ServiceControl.BusinessObjects
         {
             using (Renci.SshNet.SshClient client = new Renci.SshNet.SshClient(Value, Username, EPMI.Core.Encryption.AES.DecryptString(Password)))
             {
-                client.Connect();
-                var cmd = client.RunCommand(string.Format("{0}stop.sh", Path));
-                OnLog(new LogEventArgs(string.Format("Attempting to stop all serivices on {0}", Name)));
-                client.Disconnect();
+                try
+                {
+                    client.Connect();
+                    var cmd = client.RunCommand(string.Format("{0}stop.sh", Path));
+                    OnLog(new LogEventArgs(string.Format("Attempting to stop all serivices on {0}", Name)));
+                    client.Disconnect();
+                }
+                catch (SocketException)
+                {
+                    OnLog(new LogEventArgs(string.Format("Unable to connect to server {0}", Value)));
+                }
             }
             return true;
         }
