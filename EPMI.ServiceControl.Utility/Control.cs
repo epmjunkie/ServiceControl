@@ -82,7 +82,8 @@ namespace EPMI.ServiceControl.Utility
                             {
                                 BO.Service s = new BO.Service
                                 {
-                                    Host = host.Name,
+                                    Host = host.Value,
+                                    Server = host.Name,
                                     Name = item.Name,
                                     Value = item.Value,
                                     Description = service.Description,

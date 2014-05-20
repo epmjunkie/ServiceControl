@@ -84,7 +84,7 @@ namespace EPMI.ServiceControl.Utility
             host.Services = new List<BO.Service>();
             try
             {
-                System.ServiceProcess.ServiceController[] sc = System.ServiceProcess.ServiceController.GetServices(host.Name);
+                System.ServiceProcess.ServiceController[] sc = System.ServiceProcess.ServiceController.GetServices(host.Value);
                 foreach (var s in sc)
                 {
                     host.Services.Add(new BO.Service
