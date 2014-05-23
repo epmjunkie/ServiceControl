@@ -17,6 +17,7 @@ using EPMI.Core;
 using BO = EPMI.ServiceControl.BusinessObjects;
 using Ssh = Renci.SshNet;
 using System.Xml;
+using System.Text.RegularExpressions;
 
 namespace EPMI.ServiceControl.WPF
 {
@@ -156,7 +157,7 @@ namespace EPMI.ServiceControl.WPF
                                 doc.LoadXml(resp);
                                 var nodes = doc.SelectNodes("INVENTORY/HOME_LIST/HOME");
                                 for (int i = 0; i < nodes.Count; i++)
-                                    if (nodes[i].Attributes["NAME"].Value == "EpmSystem_hyperion")
+                                    if (Regex.IsMatch(nodes[i].Attributes["NAME"].Value, @"EpmSystem_\S+"))
                                     {
                                         tbxUnixPath.Text = nodes[i].Attributes["LOC"].Value;
                                         break;
