@@ -169,11 +169,11 @@ namespace EPMI.ServiceControl.WPF
                     client.Disconnect();
                 }
             }
-            catch (Ssh.Common.SshAuthenticationException ex)
+            catch (Ssh.Common.SshAuthenticationException)
             {
                 MessageBox.Show("Failed to authenticate to server. Check username and password.");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Unknown error.");
             }
