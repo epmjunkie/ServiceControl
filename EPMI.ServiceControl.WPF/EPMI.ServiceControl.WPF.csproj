@@ -54,6 +54,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>EPMI.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\3rd Party\Enterprise Library5\Microsoft.Practices.Unity.dll</HintPath>
