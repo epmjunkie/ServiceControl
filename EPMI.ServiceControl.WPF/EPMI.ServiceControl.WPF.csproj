@@ -206,7 +206,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="EPMI.ico" />
+    <Resource Include="EPMI.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Renci.SshNet.license">

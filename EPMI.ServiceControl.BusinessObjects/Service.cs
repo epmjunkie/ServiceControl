@@ -53,7 +53,7 @@ namespace EPMI.ServiceControl.BusinessObjects
             {
                 return WindowsStart();
             }
-            catch (Exception ex) { return false; }
+            catch (Exception) { return false; }
         }
         bool IProfileItem.Stop()
         {
@@ -61,9 +61,9 @@ namespace EPMI.ServiceControl.BusinessObjects
             {
                 return WindowsStop();
             }
-            catch (Exception ex) { return false; }
+            catch (Exception) { return false; }
         }
-        string ToString()
+        public override string ToString()
         {
             return this.Name;
         }
