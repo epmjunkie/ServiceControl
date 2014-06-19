@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
 		<!-- Select a Product Configuration -->
 		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
@@ -30,25 +30,9 @@
 	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2013Limited\InstallShield.targets"/>
 	<ItemGroup/>
 	<ItemGroup>
-		<ProjectReference Include="..\EPMI.Core\EPMI.Core.csproj">
-			<Name>EPMI.Core</Name>
-			<Project>{0D81E327-ACCD-4A65-955D-3D6A8B5E25D0}</Project>
-		</ProjectReference>
-		<ProjectReference Include="..\EPMI.ServiceControl.BusinessObjects\EPMI.ServiceControl.BusinessObjects.csproj">
-			<Name>EPMI.ServiceControl.BusinessObjects</Name>
-			<Project>{C4376D56-33E0-411A-A4A9-DB8CD5788DB7}</Project>
-		</ProjectReference>
-		<ProjectReference Include="..\EPMI.ServiceControl.Utility\EPMI.ServiceControl.Utility.csproj">
-			<Name>EPMI.ServiceControl.Utility</Name>
-			<Project>{69CACD7F-D599-4954-906E-ECC5AFE2E8D1}</Project>
-		</ProjectReference>
 		<ProjectReference Include="..\EPMI.ServiceControl.WPF\EPMI.ServiceControl.WPF.csproj">
 			<Name>EPMI.ServiceControl.WPF</Name>
 			<Project>{45813541-764C-4E37-AED8-B9B7536F6B82}</Project>
-		</ProjectReference>
-		<ProjectReference Include="..\EPMI.UI\EPMI.UI.csproj">
-			<Name>EPMI.UI</Name>
-			<Project>{DE07041C-ED78-4854-A22C-27CFD36C83D9}</Project>
 		</ProjectReference>
 	</ItemGroup>
 </Project>
