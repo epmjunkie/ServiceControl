@@ -57,9 +57,6 @@
     <ApplicationIcon>EPMI.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Practices.Unity">
-      <HintPath>..\3rd Party\Enterprise Library5\Microsoft.Practices.Unity.dll</HintPath>
-    </Reference>
     <Reference Include="Renci.SshNet">
       <HintPath>..\3rd Party\SSH\Renci.SshNet.dll</HintPath>
     </Reference>
@@ -211,16 +208,16 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Renci.SshNet.license">
+    <Content Include="Renci.SshNet.license">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoPictureBox.Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\mt.exe" -manifest "$(ProjectDir)app.manifest" -updateresource:"$(TargetDir)$(TargetName).exe;#1"</PostBuildEvent>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\mt.exe" -manifest "$(ProjectDir)app.manifest" -updateresource:"$(TargetDir)$(TargetName).exe;#1"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

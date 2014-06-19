@@ -341,17 +341,9 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>EPMI.Core.Primary_output</td><td>{7B635423-D040-4979-8890-5676D435966E}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.core.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.Core.Primary_output2</td><td>{8C644CB9-8637-4721-BC80-B20E719338DD}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.core.primary_output1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.ServiceControl.BusinessObjects.Primary_output</td><td>{4D9FDAB7-E0C1-4EB0-8D33-76E98DE87BD2}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.servicecontrol.business</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.ServiceControl.BusinessObjects.Primary_output2</td><td>{852105F4-BCC1-4599-BB76-F12F04337522}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.servicecontrol.business1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.ServiceControl.Utility.Primary_output</td><td>{D5360F2C-A8C0-497A-9D09-4F21D2E9D114}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.servicecontrol.utility.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.ServiceControl.Utility.Primary_output2</td><td>{F2266C21-B4C3-4BC3-BD93-D1523B17C3A3}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.servicecontrol.utility.1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.ServiceControl.WPF.Content_Files1</td><td>{A12DC8E9-064C-4C37-A20F-3D3B16CAA3C7}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.servicecontrol.wpf.cont1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.ServiceControl.WPF.Primary_output</td><td>{5F8116B1-84C9-4BB6-9312-827752520264}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.servicecontrol.wpf.prim</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.ServiceControl.WPF.Primary_output2</td><td>{4CB0DDED-E2AF-4F59-885B-135DB83DCF1E}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.servicecontrol.wpf.prim1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.UI.Primary_output</td><td>{319DB0D9-B9D8-4055-BCF1-D42B333E5655}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.ui.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EPMI.UI.Primary_output2</td><td>{FA375EF2-A106-4A0F-90CB-D2A9DE5F35E3}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.ui.primary_output1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>EPMI.ServiceControl.WPF.Content_Files</td><td>{8FED0B8C-BB2F-4C51-B450-8F6108639A49}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.servicecontrol.wpf.cont</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>EPMI.ServiceControl.WPF.Primary_output</td><td>{5385ADEE-78B8-4FC9-8340-18E1A14E2F80}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>EPMI.ServiceControl.WPF.Primary_output1</td><td>{97A56503-0431-47A0-94FC-D281D3846989}</td><td>INSTALLDIR</td><td>2</td><td/><td>epmi.servicecontrol.wpf.prim</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1061,6 +1053,7 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>INSTALLDIR</td><td>EPMI.ServiceControl.WPF.Primary_output</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1876,16 +1869,12 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>EPMI.Core.Primary_output</td></row>
-		<row><td>AlwaysInstall</td><td>EPMI.Core.Primary_output2</td></row>
 		<row><td>AlwaysInstall</td><td>EPMI.ServiceControl.BusinessObjects.Primary_output</td></row>
-		<row><td>AlwaysInstall</td><td>EPMI.ServiceControl.BusinessObjects.Primary_output2</td></row>
 		<row><td>AlwaysInstall</td><td>EPMI.ServiceControl.Utility.Primary_output</td></row>
-		<row><td>AlwaysInstall</td><td>EPMI.ServiceControl.Utility.Primary_output2</td></row>
-		<row><td>AlwaysInstall</td><td>EPMI.ServiceControl.WPF.Content_Files1</td></row>
+		<row><td>AlwaysInstall</td><td>EPMI.ServiceControl.WPF.Content_Files</td></row>
 		<row><td>AlwaysInstall</td><td>EPMI.ServiceControl.WPF.Primary_output</td></row>
-		<row><td>AlwaysInstall</td><td>EPMI.ServiceControl.WPF.Primary_output2</td></row>
+		<row><td>AlwaysInstall</td><td>EPMI.ServiceControl.WPF.Primary_output1</td></row>
 		<row><td>AlwaysInstall</td><td>EPMI.UI.Primary_output</td></row>
-		<row><td>AlwaysInstall</td><td>EPMI.UI.Primary_output2</td></row>
 	</table>
 
 	<table name="File">
@@ -1900,12 +1889,8 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>epmi.core.primary_output1</td><td>EPMI.Core.Primary_output2</td><td>EPMI.Core.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;EPMI.Core&gt;|Built</td><td>3</td><td/></row>
-		<row><td>epmi.servicecontrol.business1</td><td>EPMI.ServiceControl.BusinessObjects.Primary_output2</td><td>EPMI.ServiceControl.BusinessObjects.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;EPMI.ServiceControl.BusinessObjects&gt;|Built</td><td>3</td><td/></row>
-		<row><td>epmi.servicecontrol.utility.1</td><td>EPMI.ServiceControl.Utility.Primary_output2</td><td>EPMI.ServiceControl.Utility.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;EPMI.ServiceControl.Utility&gt;|Built</td><td>3</td><td/></row>
-		<row><td>epmi.servicecontrol.wpf.cont1</td><td>EPMI.ServiceControl.WPF.Content_Files1</td><td>EPMI.ServiceControl.WPF.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;EPMI.ServiceControl.WPF&gt;|ContentFiles</td><td>3</td><td/></row>
-		<row><td>epmi.servicecontrol.wpf.prim1</td><td>EPMI.ServiceControl.WPF.Primary_output2</td><td>EPMI.ServiceControl.WPF.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;EPMI.ServiceControl.WPF&gt;|Built</td><td>3</td><td/></row>
-		<row><td>epmi.ui.primary_output1</td><td>EPMI.UI.Primary_output2</td><td>EPMI.UI.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;EPMI.UI&gt;|Built</td><td>3</td><td/></row>
+		<row><td>epmi.servicecontrol.wpf.cont</td><td>EPMI.ServiceControl.WPF.Content_Files</td><td>EPMI.ServiceControl.WPF.Content Files</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;EPMI.ServiceControl.WPF&gt;|ContentFiles</td><td>3</td><td/></row>
+		<row><td>epmi.servicecontrol.wpf.prim</td><td>EPMI.ServiceControl.WPF.Primary_output1</td><td>EPMI.ServiceControl.WPF.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;EPMI.ServiceControl.WPF&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2051,16 +2036,12 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>EPMI.Core.Primary_output</td><td/><td/><td>_CBCA8BDC_B6F3_4F75_9734_EB39C6D00392_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>EPMI.Core.Primary_output2</td><td/><td/><td>_64272E9E_EE8A_47A4_AB93_C253F10714B7_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>EPMI.ServiceControl.BusinessObjects.Primary_output</td><td/><td/><td>_6CD93E5D_004D_432A_8879_2A7642EA2735_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>EPMI.ServiceControl.BusinessObjects.Primary_output2</td><td/><td/><td>_A99A1097_DFC8_4BF9_9D62_45C2526A9A5E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>EPMI.ServiceControl.Utility.Primary_output</td><td/><td/><td>_944C3778_DFC9_45D5_A253_D32B54F1E099_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>EPMI.ServiceControl.Utility.Primary_output2</td><td/><td/><td>_D4D607DE_84F5_4904_A0F5_564C4A349452_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>EPMI.ServiceControl.WPF.Content_Files1</td><td/><td/><td>_558A99AF_BDEF_4883_AFD5_952EBD248CEA_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>EPMI.ServiceControl.WPF.Content_Files</td><td/><td/><td>_F1A03953_8FB2_4965_9551_15DBBD9E473B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>EPMI.ServiceControl.WPF.Primary_output</td><td/><td/><td>_666CCAD8_FD76_4ACC_9CD2_2201A291527A_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>EPMI.ServiceControl.WPF.Primary_output2</td><td/><td/><td>_243363C8_8CDF_4C2B_8808_C2EE3AD4D71C_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>EPMI.ServiceControl.WPF.Primary_output1</td><td/><td/><td>_B59073EA_A42E_4C36_9B96_E84E23DA8750_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>EPMI.UI.Primary_output</td><td/><td/><td>_424FC1EA_9A6F_4EE8_B5FD_E63079529428_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>EPMI.UI.Primary_output2</td><td/><td/><td>_AC0910DC_52B6_4AF1_99D0_D86A9A088BEF_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2685,7 +2666,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>EPM Intelligence, LLC.</td><td>0</td><td/><td>-1826444905</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>EPM Intelligence, LLC.</td><td>0</td><td/><td>-1826445929</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>-1826437663</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>-1826437663</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40CLIENT</td><td>1033</td><td>Microsoft .NET Framework 4.0 Client Package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-1826485353</td></row>
@@ -3790,8 +3771,8 @@
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-1826437663</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-1826437663</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>-1826435615</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>http://www.EPMIntelligence,LLC..com</td><td>0</td><td/><td>-1826444905</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>EPM Intelligence, LLC.</td><td>0</td><td/><td>-1826444905</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>http://www.EPMIntelligence,LLC..com</td><td>0</td><td/><td>-1826445929</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>EPM Intelligence, LLC.</td><td>0</td><td/><td>-1826445929</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>EPMI Service Control</td><td>0</td><td/><td>-1826476255</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1826437663</td></row>
 	</table>
@@ -4034,7 +4015,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{ED13BEB4-4ED6-467C-A637-0901DE4DCDA8}</td></row>
 		<row><td>ISUSSignature</td><td>{597D279D-B5A2-4C2D-B14F-A2E1C0163751}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewUpdateService,viewFeatureFiles,viewISToday,viewSetupTypes,viewDependencies,viewObjects,viewAppFiles,viewSystemSearch,viewRelease,viewSupportFiles,viewCustomActions,viewInstallScriptStd,viewServices,viewSetupDesign,viewTextMessages,viewUI,viewFileExtensions,viewShortcuts</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewUpdateService,viewFeatureFiles,viewISToday,viewSetupTypes,viewDependencies,viewObjects,viewAppFiles,viewSystemSearch,viewRelease,viewSupportFiles,viewCustomActions,viewInstallScriptStd,viewServices,viewSetupDesign,viewTextMessages,viewUI,viewFileExtensions,viewShortcuts,viewRealSetupDesign,viewUpgradePaths</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
