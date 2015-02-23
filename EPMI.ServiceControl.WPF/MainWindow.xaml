@@ -20,7 +20,14 @@
                     <RowDefinition Height="194*" />
                 </Grid.RowDefinitions>
                 <ComboBox Grid.Row="0" Height="23" Margin="0,2" DisplayMemberPath="Name" HorizontalAlignment="Left" ItemsSource="{Binding}" MaxWidth="Infinity" MinWidth="150" Name="cbxService" SelectionChanged="cbxService_SelectionChanged" UseLayoutRounding="False" VerticalAlignment="Top" />
-                <ListBox Name="lbxServices" DisplayMemberPath="Name" DataContext="{Binding NotifyOnSourceUpdated=True}" Grid.Row="1" />
+                <ListBox Name="lbxServices" DataContext="{Binding NotifyOnSourceUpdated=True}" Grid.Row="1" SelectionMode="Multiple" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                                <CheckBox Content="{Binding Path=Name}"
+                                          IsChecked="{Binding Path=IsChecked}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </Grid>
         </GroupBox>
         <Menu Grid.ColumnSpan="2" Height="23" Name="menu1" VerticalAlignment="Top">

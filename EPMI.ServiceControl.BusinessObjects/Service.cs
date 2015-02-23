@@ -8,6 +8,7 @@ using System.Xml.Serialization;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Xml;
+using System.ComponentModel;
 
 namespace EPMI.ServiceControl.BusinessObjects
 {
@@ -40,6 +41,9 @@ namespace EPMI.ServiceControl.BusinessObjects
         public string Host { get; set; }
         [XmlIgnore]
         public string Server { get; set; }
+        [XmlIgnore]
+        [DefaultValue(true)]
+        public bool IsChecked { get; set; }
         [XmlIgnore]
         public LogEventHandler Log;
         [XmlIgnore]
@@ -193,6 +197,8 @@ namespace EPMI.ServiceControl.BusinessObjects
                     }
 
                 } while (reader.MoveToNextAttribute());
+                //Set Defaults
+                IsChecked = true;
             }
         }
 
