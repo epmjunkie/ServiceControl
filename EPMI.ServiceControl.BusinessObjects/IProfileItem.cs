@@ -9,6 +9,7 @@ namespace EPMI.ServiceControl.BusinessObjects
     {
         string Name { get; set; }
         string Value { get; set; }
+        bool IsChecked { get; set; }
 
         string ToString();
 

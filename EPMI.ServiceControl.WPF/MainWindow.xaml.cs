@@ -145,6 +145,14 @@ namespace EPMI.ServiceControl.WPF
         }
         void cbxService_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //CheckedListBox test = new CheckedListBox();
+            //foreach (var value in Services.Profile[ActiveProfile.Name]) {
+            //    test.Items.Add(new { Name = value.Name, Value = value.Value });
+            //    lbxServices.Items.Add(
+            //}
+            //lbxServices.Items.Add()
+            //lbxServices.ItemsSource = test;
+            //test = Services.Profile[ActiveProfile.Name];
             lbxServices.ItemsSource = Services.Profile[ActiveProfile.Name];
         }
         private void BtnMuSave(object sender, RoutedEventArgs e)

@@ -37,6 +37,8 @@ namespace EPMI.ServiceControl.BusinessObjects
         [XmlAttribute(AttributeName = "command")]
         public string Command { get; set; }
         [XmlIgnore]
+        public bool IsChecked { get; set; }
+        [XmlIgnore]
         public List<Service> Services { get; set; }
         [XmlIgnore]
         public LogEventHandler Log;
