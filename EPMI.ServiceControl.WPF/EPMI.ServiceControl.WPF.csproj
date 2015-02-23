@@ -140,6 +140,9 @@
     <Content Include="EULA.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -211,9 +214,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Renci.SshNet.license">
+    <None Include="Renci.SshNet.license">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoPictureBox.Image.png" />
