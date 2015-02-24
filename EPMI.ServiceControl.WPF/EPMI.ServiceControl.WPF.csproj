@@ -137,9 +137,6 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="EULA.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="LICENSE">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
