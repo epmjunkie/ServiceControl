@@ -173,6 +173,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Resource Include="Resources\service_contro_graphic.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EPMI.Core\EPMI.Core.csproj">
@@ -214,9 +215,6 @@
     <None Include="Renci.SshNet.license">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logoPictureBox.Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

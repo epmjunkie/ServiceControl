@@ -105,5 +105,10 @@ namespace EPMI.ServiceControl.WPF
             }
         }
         #endregion
+
+        private void logoPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
