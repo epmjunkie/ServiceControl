@@ -74,6 +74,8 @@ namespace EPMI.ServiceControl.Utility
         {
             foreach (BO.Service service in profile)
             {
+                if (service.IsChecked != true)
+                    continue;
                 GetServers(hosts);
                 foreach (BO.Host host in hosts)
                     if (!host.IsSSH)
