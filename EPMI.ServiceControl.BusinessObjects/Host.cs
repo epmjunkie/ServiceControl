@@ -8,6 +8,7 @@ using System.ServiceModel;
 using System.Xml;
 using System.IO;
 using System.Net.Sockets;
+using System.ComponentModel;
 
 namespace EPMI.ServiceControl.BusinessObjects
 {
@@ -37,6 +38,7 @@ namespace EPMI.ServiceControl.BusinessObjects
         [XmlAttribute(AttributeName = "command")]
         public string Command { get; set; }
         [XmlIgnore]
+        [DefaultValue(true)]
         public bool IsChecked { get; set; }
         [XmlIgnore]
         public List<Service> Services { get; set; }
@@ -154,6 +156,8 @@ namespace EPMI.ServiceControl.BusinessObjects
                     }
 
                 } while (reader.MoveToNextAttribute());
+                //Set Defaults
+                IsChecked = true;
             }
         }
         public System.Xml.Schema.XmlSchema GetSchema()

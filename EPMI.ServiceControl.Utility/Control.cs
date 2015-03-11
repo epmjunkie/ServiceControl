@@ -78,6 +78,9 @@ namespace EPMI.ServiceControl.Utility
                     continue;
                 GetServers(hosts);
                 foreach (BO.Host host in hosts)
+                {
+                    if (host.IsChecked != true)
+                        continue;
                     if (!host.IsSSH)
                         foreach (var item in host.Services)
                             if (IsMatch(service, item))
@@ -97,7 +100,7 @@ namespace EPMI.ServiceControl.Utility
                                 s.Progress += ProgressChanged;
                                 queue.Enqueue(s);
                             }
-
+                }
             }
             return queue;
         }
