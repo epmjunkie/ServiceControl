@@ -27,6 +27,7 @@ namespace EPMI.ServiceControl.WPF
     public partial class WndAddServer : Window
     {
         string Password { get; set; }
+        bool? IsChecked { get; set; }
         public bool isValid
         {
             get
@@ -47,7 +48,8 @@ namespace EPMI.ServiceControl.WPF
                     IsSSH = IsSSH.IsChecked ?? false,
                     Username = tbxUsername.Text,
                     Password = (string.IsNullOrEmpty(tbxPassword.Password) ? Password : EPMI.Core.Encryption.AES.EncryptString(tbxPassword.Password)),
-                    Path = tbxUnixPath.Text
+                    Path = tbxUnixPath.Text,
+                    IsChecked = IsChecked ?? true
                 };
             }
             set
@@ -58,6 +60,7 @@ namespace EPMI.ServiceControl.WPF
                 tbxUsername.Text = value.Username;
                 Password = value.Password;
                 tbxUnixPath.Text = value.Path;
+                IsChecked = value.IsChecked;
             }
         }
 
