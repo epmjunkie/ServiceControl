@@ -14,6 +14,7 @@
     </Feature>
     <UIRef Id="ServiceControlUI" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <Property Id="LAUNCHAPPONEXIT" Value="1" />
   </Product>
 
   <Fragment>
@@ -68,6 +69,15 @@
       </Component>
       <Component Id="EPMI.UI">
         <File Id="EPMI.UI" Source="$(var.EPMI.UI.TargetPath)" />
+      </Component>
+      <Component Id="Renci.SshNet.dll">
+        <File Id="Renci.SshNet.dll" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Renci.SshNet.dll" />
+      </Component>
+      <Component Id="License">
+        <File Id="Licnese" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)LICENSE" />
+      </Component>
+      <Component Id="Renci.SshNet.License">
+        <File Id="Renci.SshNet.License" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Renci.SshNet.License" />
       </Component>
     </ComponentGroup>
     <ComponentGroup Id="Profiles" Directory="PROFILE">
