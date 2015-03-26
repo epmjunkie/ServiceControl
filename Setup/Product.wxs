@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Product Id="*" Name="EPMI Service Control" Language="1033" Version="1.0.0.1" Manufacturer="EPM Intelligence, LLC." UpgradeCode="4cbcf12c-daa1-42ca-a52b-4c7d270c082a">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Service Control is already installed." />
+    <!--<MediaTemplate />-->
+    <Media Id="1" Cabinet="ServiceControl.cab" EmbedCab="yes" />
+
+    <Feature Id="ProductFeature" Title="Setup" Level="1">
+      <ComponentGroupRef Id="ServiceControl" />
+      <ComponentGroupRef Id="Profiles" />
+      <ComponentRef Id="ApplicationSortcut"/>
+    </Feature>
+    <UIRef Id="ServiceControlUI" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="COMPANYFOLDER" Name="EPM Intelligence">
+          <Directory Id="INSTALLFOLDER" Name="Service Control">
+            <Directory Id="PROFILE" Name="Profiles" />
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id="DesktopFolder" />
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="EPMI Service Control" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationSortcut" Guid="C79952DC-4290-4734-9D0F-82E175F11576">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="EPMI Service Control"
+                  Description="Start and Stop Services"
+                  WorkingDirectory="INSTALLFOLDER"
+                  Target="[INSTALLFOLDER]ServiceControl.WPF.exe"
+                  Advertise="no" />
+        <Shortcut Id="UninstallProduct"
+                  Name="Uninstall EPMI Service Control"
+                  Description="Uninstalls EPMI Service Control"
+                  Target="[System64Folder]msiexec.exe"
+                  Arguments="/x [ProductCode]"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\EPMI\Service Control" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  
+  <Fragment>
+    <ComponentGroup Id="ServiceControl" Directory="INSTALLFOLDER">
+      <Component Id="EPMI.ServiceControl.WPF" Guid="5CDD2A95-3C20-42D0-9857-3DE37231804E">
+        <File Id="EPMI.ServiceControl.WPF1" Source="$(var.EPMI.ServiceControl.WPF.TargetPath)" KeyPath="yes" />
+      </Component>
+      <Component Id="EPMI.ServiceControl.BusinessObjects">
+        <File Id="EPMI.ServiceControl.BusinessObjects" Source="$(var.EPMI.ServiceControl.BusinessObjects.TargetPath)" />
+      </Component>
+      <Component Id="EPMI.ServiceControl.Utility">
+        <File Id="EPMI.ServiceControl.Utility" Source="$(var.EPMI.ServiceControl.Utility.TargetPath)" />
+      </Component>
+      <Component Id="EPMI.Core">
+        <File Id="EPMI.Core" Source="$(var.EPMI.Core.TargetPath)" />
+      </Component>
+      <Component Id="EPMI.UI">
+        <File Id="EPMI.UI" Source="$(var.EPMI.UI.TargetPath)" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="Profiles" Directory="PROFILE">
+      <Component Id="Default.host">
+        <File Id="Default.host" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Profiles\Default.host" />
+      </Component>
+      <Component Id="Default.service">
+        <File Id="Default.service" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Profiles\Default.service" />
+      </Component>
+      <Component Id="Custom.service">
+        <File Id="Custom.service" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Profiles\Custom.service" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
