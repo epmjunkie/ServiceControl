@@ -78,6 +78,8 @@ namespace EPMI.ServiceControl.BusinessObjects
         }
         bool WindowsStart()
         {
+            //ImpersonateUser iu = new ImpersonateUser();
+            //iu.Impersonate(this.Domain, this.UserName, this.Password);
             using (ServiceController sc = new ServiceController(this.Value, this.Host))
             {
                 OnLog(new LogEventArgs(string.Format("Starting {0} on {1}", this.Name, this.Server)));
@@ -95,10 +97,13 @@ namespace EPMI.ServiceControl.BusinessObjects
                 Thread.Sleep(this.StartDelay * 1000);
                 return sc.Status == ServiceControllerStatus.Running;
             }
+            // ui.Undo();
         }
 
         bool WindowsStop()
         {
+            //ImpersonateUser iu = new ImpersonateUser();
+            //iu.Impersonate(this.Domain, this.UserName, this.Password);
             using (ServiceController sc = new ServiceController(this.Value, this.Host))
             {
                 OnLog(new LogEventArgs(string.Format("Stopping {0} on {1}", this.Name, this.Server)));
@@ -116,6 +121,7 @@ namespace EPMI.ServiceControl.BusinessObjects
                 Thread.Sleep(this.StopDelay * 1000);
                 return sc.Status == ServiceControllerStatus.Stopped;
             }
+            // ui.Undo();
         }
         public void OnLog(LogEventArgs e)
         {
