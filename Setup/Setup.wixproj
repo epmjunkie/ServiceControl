@@ -73,10 +73,9 @@
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="epmi_installerbanner_32615.png" />
-    <Content Include="epmi_installerBG_32615.png" />
+    <Content Include="epmi_installerbanner.bmp" />
+    <Content Include="epmi_installerBG.bmp" />
     <Content Include="License.rtf" />
-    <Content Include="service_contro_graphic.bmp" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--

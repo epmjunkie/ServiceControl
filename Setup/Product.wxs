@@ -14,8 +14,8 @@
     </Feature>
 
     <!-- Display License -->
-    <WixVariable Id="WixUIBannerBmp" Value="epmi_installerbanner_32615.png" />
-    <WixVariable Id="WixUIDialogBmp" Value="epmi_installerBG_32615.png" />
+    <WixVariable Id="WixUIBannerBmp" Value="epmi_installerbanner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="epmi_installerBG.bmp" />
     <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
     
     <UIRef Id="ServiceControlUI" />

@@ -23,7 +23,7 @@
                 <ListBox Name="lbxServices" DataContext="{Binding NotifyOnSourceUpdated=True}" Grid.Row="1" SelectionMode="Multiple" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                                <CheckBox Content="{Binding Path=Name}"
+                            <CheckBox Content="{Binding Path=Name}"
                                           IsChecked="{Binding Path=IsChecked}" />
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -51,7 +51,7 @@
                     <RowDefinition Height="176*" />
                 </Grid.RowDefinitions>
                 <ComboBox Height="23" Margin="2,3,0,0" DisplayMemberPath="Name" Name="cbxHost" SelectionChanged="cbxHost_SelectionChanged" Text="" VerticalAlignment="Top" />
-                <ListBox Grid.Row="1" Width="168" DataContext="{Binding NotifyOnSourceUpdated=True}" HorizontalAlignment="Right" Name="lbxHosts" Height="188" VerticalAlignment="Top" SelectionChanged="lbxHosts_SelectionChanged" SelectionMode="Multiple">
+                <ListBox Grid.Row="1" Width="168" DataContext="{Binding NotifyOnSourceUpdated=True}" HorizontalAlignment="Right" Name="lbxHosts" SelectionChanged="lbxHosts_SelectionChanged" SelectionMode="Multiple">
                     <ListBox.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="Add" Click="MenuItem_Host_Add" />
