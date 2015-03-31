@@ -173,7 +173,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Resource Include="Resources\service_contro_graphic.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EPMI.Core\EPMI.Core.csproj">
@@ -210,12 +209,14 @@
     <Resource Include="EPMI.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\service_control_graphic.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Renci.SshNet.license">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\mt.exe" -manifest "$(ProjectDir)app.manifest" -updateresource:"$(TargetDir)$(TargetName).exe;#1"</PostBuildEvent>

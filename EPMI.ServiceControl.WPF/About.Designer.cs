@@ -69,7 +69,7 @@
             // 
             this.logoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = global::EPMI.ServiceControl.WPF.Properties.Resources.service_contro_graphic;
+            this.logoPictureBox.Image = global::EPMI.ServiceControl.WPF.Properties.Resources.service_control_graphic;
             this.logoPictureBox.Location = new System.Drawing.Point(4, 5);
             this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.logoPictureBox.Name = "logoPictureBox";
