@@ -53,8 +53,9 @@ namespace EPMI.ServiceControl.Utility
         #region Private Static Methods
         static void GetServers(BO.Profile hosts)
         {
+            Host t = new Host();
             foreach (var host in hosts.Where(c => ((BO.Host)c).IsSSH == false))
-                Host.GetServices((BO.Host)host);
+                t.GetServices((BO.Host)host);
         }
         #endregion
 
@@ -94,7 +95,10 @@ namespace EPMI.ServiceControl.Utility
                                     Description = service.Description,
                                     Status = item.Status,
                                     TimeOut = service.TimeOut,
-                                    StartDelay = service.StartDelay
+                                    StartDelay = service.StartDelay,
+                                    Username = host.Username,
+                                    Password = host.Password,
+                                    Domain = host.Domain
                                 };
                                 s.Log += LogHandler;
                                 s.Progress += ProgressChanged;

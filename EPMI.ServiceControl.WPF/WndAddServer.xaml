@@ -2,63 +2,54 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:EPMI.UI;assembly=EPMI.UI"
-        Title="Server Information" Height="227" Width="337" ResizeMode="NoResize" Name="wndAddServer" AllowsTransparency="False">
+        Title="Server Information" Height="239" Width="337" ResizeMode="NoResize" Name="wndAddServer" AllowsTransparency="False">
     <Window.Resources>
         <local:Helper x:Key="Helper" />
     </Window.Resources>
     <Grid>
-    <TabControl Name="tabControl1" Margin="0,0,0,31">
-        <TabItem Header="Host Information" Name="tabHost">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="174*" />
-                    <ColumnDefinition Width="14*" />
-                    <ColumnDefinition Width="27*" />
-                    <ColumnDefinition Width="64*" />
-                </Grid.ColumnDefinitions>
-                <TextBlock Margin="13,70,12,0" Padding="10,3" Text="server1.example.com" Foreground="LightGray" Name="hdnHost" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="4">
-                <TextBlock.Visibility>
-                    <MultiBinding Converter="{StaticResource Helper}">
-                        <Binding ElementName="tbxHost" Path="Text.IsEmpty" />
-                        <!-- <Binding ElementName="tbxServer" Path="IsFocused" /> -->
-                    </MultiBinding>
-            </TextBlock.Visibility>
-                </TextBlock>
-                <TextBlock Margin="13,26,12,0" Padding="10,3" Text="Server 1" Foreground="LightGray" Name="hdnName" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="4">
-                <TextBlock.Visibility>
-                    <MultiBinding Converter="{StaticResource Helper}">
-                        <Binding ElementName="tbxName" Path="Text.IsEmpty" />
-                        <!-- <Binding ElementName="tbxServer" Path="IsFocused" /> -->
-                    </MultiBinding>
-            </TextBlock.Visibility>
-                </TextBlock>
-                <TextBox Margin="13,70,12,0" Name="tbxHost" ForceCursor="True" Background="Transparent" KeyDown="tbxHost_KeyDown" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="4" />
+        <TabControl Name="tabControl1" Margin="0,0,0,31">
+            <TabItem Header="Host Information" Name="tabHost">
+                <Grid>
+                    <TextBlock Margin="13,70,0,0" Padding="10,3" Text="server1.example.com" Foreground="LightGray" Name="hdnHost" Height="23" VerticalAlignment="Top">
+                        <TextBlock.Visibility>
+                            <MultiBinding Converter="{StaticResource Helper}">
+                                <Binding ElementName="tbxHost" Path="Text.IsEmpty" />
+                                <!-- <Binding ElementName="tbxServer" Path="IsFocused" /> -->
+                            </MultiBinding>
+                        </TextBlock.Visibility>
+                    </TextBlock>
+                    <TextBlock Margin="13,26,0,0" Padding="10,3" Text="Server 1" Foreground="LightGray" Name="hdnName" Height="23" VerticalAlignment="Top">
+                        <TextBlock.Visibility>
+                            <MultiBinding Converter="{StaticResource Helper}">
+                                <Binding ElementName="tbxName" Path="Text.IsEmpty" />
+                                <!-- <Binding ElementName="tbxServer" Path="IsFocused" /> -->
+                            </MultiBinding>
+                        </TextBlock.Visibility>
+                    </TextBlock>
+                    <TextBox Margin="13,70,0,0" Name="tbxHost" ForceCursor="True" Background="Transparent" KeyDown="tbxHost_KeyDown" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="298" />
                     <Label Content="Hostname or IP Address" Margin="14,47,0,0" Name="lblHost" HorizontalAlignment="Left" Width="151" Height="28" VerticalAlignment="Top" />
-                <TextBox Background="Transparent" ForceCursor="True" Margin="13,26,12,0" Name="tbxName" KeyDown="tbxName_KeyDown" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="4" />
-                <Label Content="Name" Height="28" Margin="13,4,0,0" Name="lblName" VerticalAlignment="Top" HorizontalAlignment="Left" Width="66" />
-                <CheckBox Content="SSH" Height="16" HorizontalAlignment="Left" Margin="14,97,0,0" Name="IsSSH" VerticalAlignment="Top" />
-            </Grid>
-        </TabItem>
+                    <TextBox Background="Transparent" ForceCursor="True" Margin="13,26,0,0" Name="tbxName" KeyDown="tbxName_KeyDown" Height="23" VerticalAlignment="Top" TabIndex="101" HorizontalAlignment="Left" Width="298" />
+                    <Label Content="Name" Height="28" Margin="13,4,0,0" Name="lblName" VerticalAlignment="Top" HorizontalAlignment="Left" Width="66" />
+                    <CheckBox Content="SSH" Height="16" HorizontalAlignment="Left" Margin="14,97,0,0" Name="IsSSH" VerticalAlignment="Top" Width="38" />
+                </Grid>
+            </TabItem>
             <TabItem Header="Credentials" Name="tabCred">
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="46" />
-                        <ColumnDefinition Width="72" />
-                        <ColumnDefinition Width="187" />
-                    </Grid.ColumnDefinitions>
-                    <Label Content="Password" Grid.ColumnSpan="3" Height="28" HorizontalAlignment="Left" Margin="14,47,0,0" Name="label2" VerticalAlignment="Top" Width="151" />
-                    <TextBox Background="Transparent" ForceCursor="True" Grid.ColumnSpan="3" Height="23" Margin="13,26,12,0" Name="tbxUsername" VerticalAlignment="Top" />
-                    <Label Content="Username" Grid.ColumnSpan="2" Height="28" HorizontalAlignment="Left" Margin="13,4,0,0" Name="label3" VerticalAlignment="Top" Width="66" />
-                    <PasswordBox Height="23" HorizontalAlignment="Left" Margin="13,70,12,0" Name="tbxPassword" VerticalAlignment="Top" Width="280" Grid.ColumnSpan="3">
+                    <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="14,39,0,0" Name="label2" VerticalAlignment="Top" Width="151" />
+                    <TextBox Background="Transparent" ForceCursor="True" Height="23" Margin="13,18,0,0" Name="tbxUsername" VerticalAlignment="Top" HorizontalAlignment="Left" Width="296" />
+                    <Label Content="Username" Height="28" HorizontalAlignment="Left" Margin="13,-4,0,0" Name="label3" VerticalAlignment="Top" Width="66" />
+                    <PasswordBox Height="23" Margin="14,62,0,0" Name="tbxPassword" VerticalAlignment="Top" HorizontalAlignment="Left" Width="295">
                         <PasswordBox.Background>
                             <SolidColorBrush />
                         </PasswordBox.Background>
                     </PasswordBox>
+                    <Label Content="Domain" Height="28" HorizontalAlignment="Left" Margin="14,85,0,0" x:Name="label2_Copy" VerticalAlignment="Top" Width="151" />
+                    <TextBox Background="Transparent" ForceCursor="True" Height="23" Margin="14,108,0,0" x:Name="tbxDomain" VerticalAlignment="Top" HorizontalAlignment="Left" Width="295" />
                 </Grid>
             </TabItem>
             <TabItem Header="Unix Path" Name="tabItem1">
                 <Grid>
-                    <TextBox Margin="0,0,18,86" Name="tbxUnixPath" HorizontalAlignment="Right" Width="241" Height="23" VerticalAlignment="Bottom" />
+                    <TextBox Margin="62,0,0,86" Name="tbxUnixPath" HorizontalAlignment="Left" Width="241" Height="23" VerticalAlignment="Bottom" />
                     <Label Content="Path" HorizontalAlignment="Right" Margin="0,0,265,83" Name="lblUnixPath" Height="28" VerticalAlignment="Bottom" />
                     <Button Content="Detect..." Height="23" HorizontalAlignment="Right" Margin="0,0,18,57" Name="btnUnixDetect" VerticalAlignment="Bottom" Width="75" Click="btnUnixDetect_Click" />
                 </Grid>

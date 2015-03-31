@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Xml;
 using System.ComponentModel;
+using EPMI.Core;
 
 namespace EPMI.ServiceControl.BusinessObjects
 {
@@ -50,6 +51,10 @@ namespace EPMI.ServiceControl.BusinessObjects
         public ProgressChanged Progress;
         [XmlIgnore]
         public ServiceControllerStatus Status { get; set; }
+        [XmlIgnore]
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Domain { get; set; }
 
         bool IProfileItem.Start()
         {
@@ -78,43 +83,63 @@ namespace EPMI.ServiceControl.BusinessObjects
         }
         bool WindowsStart()
         {
-            using (ServiceController sc = new ServiceController(this.Value, this.Host))
+            ImpersonateUser iu = new ImpersonateUser();
+            try
             {
-                OnLog(new LogEventArgs(string.Format("Starting {0} on {1}", this.Name, this.Server)));
-                if (sc.Status == ServiceControllerStatus.Running)
+                if (!(string.IsNullOrEmpty(this.Username) || string.IsNullOrEmpty(this.Password)))
+                    iu.Impersonate(this.Domain, this.Username, EPMI.Core.Encryption.AES.DecryptString(this.Password));
+                using (ServiceController sc = new ServiceController(this.Value, this.Host))
                 {
-                    OnLog(new LogEventArgs(string.Format("Service {0} already running on {1}", this.Name, this.Server)));
+                    OnLog(new LogEventArgs(string.Format("Starting {0} on {1}", this.Name, this.Server)));
+                    if (sc.Status == ServiceControllerStatus.Running)
+                    {
+                        OnLog(new LogEventArgs(string.Format("Service {0} already running on {1}", this.Name, this.Server)));
+                        OnProgress(new EventArgs());
+                        return true;
+                    }
+                    sc.Start();
+                    sc.WaitForStatus(ServiceControllerStatus.Running, new TimeSpan(0, 0, this.TimeOut));
+                    sc.Refresh();
+                    OnLog(new LogEventArgs(string.Format("[{2}] - {0} - {1}", this.Name, sc.Status, this.Server)));
                     OnProgress(new EventArgs());
-                    return true;
+                    Thread.Sleep(this.StartDelay * 1000);
+                    return sc.Status == ServiceControllerStatus.Running;
                 }
-                sc.Start();
-                sc.WaitForStatus(ServiceControllerStatus.Running, new TimeSpan(0, 0, this.TimeOut));
-                sc.Refresh();
-                OnLog(new LogEventArgs(string.Format("[{2}] - {0} - {1}", this.Name, sc.Status, this.Server)));
-                OnProgress(new EventArgs());
-                Thread.Sleep(this.StartDelay * 1000);
-                return sc.Status == ServiceControllerStatus.Running;
+            }
+            finally
+            {
+                iu.Undo();
             }
         }
 
         bool WindowsStop()
         {
-            using (ServiceController sc = new ServiceController(this.Value, this.Host))
+            ImpersonateUser iu = new ImpersonateUser();
+            try
             {
-                OnLog(new LogEventArgs(string.Format("Stopping {0} on {1}", this.Name, this.Server)));
-                if (sc.Status == ServiceControllerStatus.Stopped)
+                if (!(string.IsNullOrEmpty(this.Username) || string.IsNullOrEmpty(this.Password)))
+                    iu.Impersonate(this.Domain, this.Username, EPMI.Core.Encryption.AES.DecryptString(this.Password));
+                using (ServiceController sc = new ServiceController(this.Value, this.Host))
                 {
-                    OnLog(new LogEventArgs(string.Format("Service {0} already stopped on {1}", this.Name, this.Server)));
+                    OnLog(new LogEventArgs(string.Format("Stopping {0} on {1}", this.Name, this.Server)));
+                    if (sc.Status == ServiceControllerStatus.Stopped)
+                    {
+                        OnLog(new LogEventArgs(string.Format("Service {0} already stopped on {1}", this.Name, this.Server)));
+                        OnProgress(new EventArgs());
+                        return true;
+                    }
+                    sc.Stop();
+                    sc.WaitForStatus(ServiceControllerStatus.Stopped, new TimeSpan(0, 0, this.TimeOut));
+                    sc.Refresh();
+                    OnLog(new LogEventArgs(string.Format("[{2}] - {0} - {1}", this.Name, sc.Status, this.Server)));
                     OnProgress(new EventArgs());
-                    return true;
+                    Thread.Sleep(this.StopDelay * 1000);
+                    return sc.Status == ServiceControllerStatus.Stopped;
                 }
-                sc.Stop();
-                sc.WaitForStatus(ServiceControllerStatus.Stopped, new TimeSpan(0, 0, this.TimeOut));
-                sc.Refresh();
-                OnLog(new LogEventArgs(string.Format("[{2}] - {0} - {1}", this.Name, sc.Status, this.Server)));
-                OnProgress(new EventArgs());
-                Thread.Sleep(this.StopDelay * 1000);
-                return sc.Status == ServiceControllerStatus.Stopped;
+            }
+            finally
+            {
+                iu.Undo();
             }
         }
         public void OnLog(LogEventArgs e)
