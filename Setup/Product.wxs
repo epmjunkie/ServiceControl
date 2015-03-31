@@ -12,11 +12,17 @@
       <ComponentGroupRef Id="Profiles" />
       <ComponentRef Id="ApplicationSortcut"/>
     </Feature>
+
+    <!-- Display License -->
+    <WixVariable Id="WixUIBannerBmp" Value="epmi_installerbanner_32615.png" />
+    <WixVariable Id="WixUIDialogBmp" Value="epmi_installerBG_32615.png" />
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+    
     <UIRef Id="ServiceControlUI" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
     <Property Id="LAUNCHAPPONEXIT" Value="1" />
   </Product>
-
+  
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">

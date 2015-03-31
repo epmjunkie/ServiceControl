@@ -72,6 +72,12 @@
       <Name>WixUIExtension</Name>
     </WixExtension>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="epmi_installerbanner_32615.png" />
+    <Content Include="epmi_installerBG_32615.png" />
+    <Content Include="License.rtf" />
+    <Content Include="service_contro_graphic.bmp" />
+  </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
