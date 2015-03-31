@@ -31,8 +31,8 @@
             </Grid>
         </GroupBox>
         <Menu Grid.ColumnSpan="2" Height="23" Name="menu1" VerticalAlignment="Top">
-            <MenuItem Header="File">
-                <MenuItem Click="BtnMuSave" Header="Save" Name="MuSave" />
+            <MenuItem Header="File" >
+                <MenuItem Click="BtnMuSave" Header="Save" Name="MuSave"/>
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Click="BtnMuAbout" Header="About EPM Service Control" Name="MuAbout" />
