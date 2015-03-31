@@ -47,6 +47,7 @@
     <Compile Include="Extensions\Enum.cs" />
     <Compile Include="Extensions\XmlSerialization.cs" />
     <Compile Include="EnumHelper.cs" />
+    <Compile Include="ImpersonateUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

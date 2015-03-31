@@ -48,6 +48,7 @@ namespace EPMI.ServiceControl.WPF
                     IsSSH = IsSSH.IsChecked ?? false,
                     Username = tbxUsername.Text,
                     Password = (string.IsNullOrEmpty(tbxPassword.Password) ? Password : EPMI.Core.Encryption.AES.EncryptString(tbxPassword.Password)),
+                    Domain = tbxDomain.Text,
                     Path = tbxUnixPath.Text,
                     IsChecked = IsChecked ?? true
                 };
@@ -59,6 +60,7 @@ namespace EPMI.ServiceControl.WPF
                 IsSSH.IsChecked = value.IsSSH;
                 tbxUsername.Text = value.Username;
                 Password = value.Password;
+                tbxDomain.Text = value.Domain;
                 tbxUnixPath.Text = value.Path;
                 IsChecked = value.IsChecked;
             }

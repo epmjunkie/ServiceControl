@@ -31,6 +31,8 @@ namespace EPMI.ServiceControl.BusinessObjects
         public string Username { get; set; }
         [XmlAttribute(AttributeName = "password")]
         public string Password { get; set; }
+        [XmlAttribute(AttributeName = "domain")]
+        public string Domain { get; set; }
         [XmlAttribute(AttributeName="ssh")]
         public bool IsSSH { get; set; }
         [XmlAttribute(AttributeName = "path")]
@@ -144,6 +146,9 @@ namespace EPMI.ServiceControl.BusinessObjects
                             break;
                         case "password":
                             Password = reader.Value;
+                            break;
+                        case "domain":
+                            Domain = reader.Value;
                             break;
                         case "path":
                             Path = reader.Value;

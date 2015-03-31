@@ -7,6 +7,7 @@ using EPMI.Core.Extensions;
 using BO = EPMI.ServiceControl.BusinessObjects;
 using System.Xml;
 using System.Xml.Serialization;
+using EPMI.Core;
 
 namespace EPMI.ServiceControl.Utility
 {
@@ -79,11 +80,14 @@ namespace EPMI.ServiceControl.Utility
             }
         }
 
-        public static void GetServices(BO.Host host)
+        public void GetServices(BO.Host host)
         {
             host.Services = new List<BO.Service>();
             try
             {
+                ImpersonateUser iu = new ImpersonateUser();
+                if (!(string.IsNullOrEmpty(host.Username) || string.IsNullOrEmpty(host.Password)))
+                    iu.Impersonate(host.Domain, host.Username, EPMI.Core.Encryption.AES.DecryptString(host.Password));
                 System.ServiceProcess.ServiceController[] sc = System.ServiceProcess.ServiceController.GetServices(host.Value);
                 foreach (var s in sc)
                 {
@@ -94,10 +98,11 @@ namespace EPMI.ServiceControl.Utility
                         Status = s.Status
                     });
                 }
+                iu.Undo();
             }
             catch (Exception)
             {
-                // unknown server or something
+                //OnLog(new BO.LogEventArgs(string.Format("Failed to Connect to Server: {0} [{1}]\r\n", host.Name, host.Value )));
             }
         }
 
