@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <Product Id="*" Name="EPMI Service Control" Language="1033" Version="1.0.0.1" Manufacturer="EPM Intelligence, LLC." UpgradeCode="4cbcf12c-daa1-42ca-a52b-4c7d270c082a">
+  <?define Version = "!(bind.fileVersion.EPMIServiceControlWPF1)" ?>
+  <?define UpgradeCode = "4cbcf12c-daa1-42ca-a52b-4c7d270c082a" ?>
+
+  <Product Id="*" Name="EPMI Service Control" Language="1033" Version="$(var.Version)" Manufacturer="EPM Intelligence, LLC." UpgradeCode="$(var.UpgradeCode)">
+
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of Service Control is already installed." />
+
     <!--<MediaTemplate />-->
-    <Media Id="1" Cabinet="ServiceControl.cab" EmbedCab="yes" />
+    <Media Id="1" Cabinet="ServiceControl.cab" EmbedCab="yes"  />
 
     <Feature Id="ProductFeature" Title="Setup" Level="1">
       <ComponentGroupRef Id="ServiceControl" />
@@ -14,13 +19,14 @@
     </Feature>
 
     <!-- Display License -->
-    <WixVariable Id="WixUIBannerBmp" Value="epmi_installerbanner.bmp" />
-    <WixVariable Id="WixUIDialogBmp" Value="epmi_installerBG.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="epmi_installerbanner_sm.jpg" />
+    <WixVariable Id="WixUIDialogBmp" Value="epmi_installerBG_sm.jpg" />
     <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
     
     <UIRef Id="ServiceControlUI" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
     <Property Id="LAUNCHAPPONEXIT" Value="1" />
+
   </Product>
   
   <Fragment>
@@ -62,7 +68,7 @@
   <Fragment>
     <ComponentGroup Id="ServiceControl" Directory="INSTALLFOLDER">
       <Component Id="EPMI.ServiceControl.WPF" Guid="5CDD2A95-3C20-42D0-9857-3DE37231804E">
-        <File Id="EPMI.ServiceControl.WPF1" Source="$(var.EPMI.ServiceControl.WPF.TargetPath)" KeyPath="yes" />
+        <File Id="EPMIServiceControlWPF1" Source="$(var.EPMI.ServiceControl.WPF.TargetPath)" KeyPath="yes" />
       </Component>
       <Component Id="EPMI.ServiceControl.BusinessObjects">
         <File Id="EPMI.ServiceControl.BusinessObjects" Source="$(var.EPMI.ServiceControl.BusinessObjects.TargetPath)" />
