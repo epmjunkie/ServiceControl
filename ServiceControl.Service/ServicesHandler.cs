@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BO = EPMI.ServiceControl.BusinessObjects;
-using EPMI.ServiceControl.Utility;
+using BO = ServiceControl.BusinessObjects;
+using ServiceControl.Utility;
 
-namespace EPMI.ServiceControl.Service
+namespace ServiceControl.Service
 {
     internal class ServicesHandler
     {

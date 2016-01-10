@@ -57,7 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EPMI.Core\EPMJunkie.Core.csproj">
+    <ProjectReference Include="..\EPMJunkie.Core\EPMJunkie.Core.csproj">
       <Project>{0D81E327-ACCD-4A65-955D-3D6A8B5E25D0}</Project>
       <Name>EPMJunkie.Core</Name>
     </ProjectReference>

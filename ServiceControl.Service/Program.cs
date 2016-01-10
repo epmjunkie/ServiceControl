@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
-using EPMI.Core;
+using EPMJunkie.Core;
 
-namespace EPMI.ServiceControl.Service
+namespace ServiceControl.Service
 {
     static class Program
     {

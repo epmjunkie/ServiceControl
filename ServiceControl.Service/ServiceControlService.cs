@@ -10,7 +10,7 @@ using System.ServiceModel;
 using System.Text;
 #endregion
 
-namespace EPMI.ServiceControl.Service
+namespace ServiceControl.Service
 {
     public partial class ServiceControlService : ServiceBase
     {
@@ -40,7 +40,7 @@ namespace EPMI.ServiceControl.Service
         {
             if (WcfServiceHost != null)
                 WcfServiceHost.Close();
-            WcfServiceHost = new ServiceHost(typeof(EPMI.ServiceControl.WCF.Listener));
+            WcfServiceHost = new ServiceHost(typeof(ServiceControl.WCF.Listener));
             WcfServiceHost.Open();
         }
         public void ShutDown()

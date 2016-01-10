@@ -189,7 +189,20 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\EPMJunkie.Core\EPMJunkie.Core.csproj">
+      <Project>{0d81e327-accd-4a65-955d-3d6a8b5e25d0}</Project>
+      <Name>EPMJunkie.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceControl.BusinessObjects\ServiceControl.BusinessObjects.csproj">
+      <Project>{c4376d56-33e0-411a-a4a9-db8cd5788db7}</Project>
+      <Name>ServiceControl.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceControl.Utility\ServiceControl.Utility.csproj">
+      <Project>{69cacd7f-d599-4954-906e-ecc5afe2e8d1}</Project>
+      <Name>ServiceControl.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

@@ -1,4 +1,4 @@
-﻿namespace EPMI.ServiceControl.Service
+﻿namespace ServiceControl.Service
 {
     partial class ServiceControlService
     {

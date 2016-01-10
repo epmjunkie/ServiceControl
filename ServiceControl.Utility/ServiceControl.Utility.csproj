@@ -52,11 +52,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EPMI.Core\EPMJunkie.Core.csproj">
+    <ProjectReference Include="..\EPMJunkie.Core\EPMJunkie.Core.csproj">
       <Project>{0D81E327-ACCD-4A65-955D-3D6A8B5E25D0}</Project>
       <Name>EPMJunkie.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EPMI.ServiceControl.BusinessObjects\ServiceControl.BusinessObjects.csproj">
+    <ProjectReference Include="..\ServiceControl.BusinessObjects\ServiceControl.BusinessObjects.csproj">
       <Project>{C4376D56-33E0-411A-A4A9-DB8CD5788DB7}</Project>
       <Name>ServiceControl.BusinessObjects</Name>
     </ProjectReference>
