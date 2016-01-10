@@ -31,41 +31,33 @@
     <Compile Include="ServiceControlUI.wxs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EPMI.Core\EPMI.Core.csproj">
-      <Name>EPMI.Core</Name>
+    <ProjectReference Include="..\EPMI.Core\EPMJunkie.Core.csproj">
+      <Name>EPMJunkie.Core</Name>
       <Project>{0d81e327-accd-4a65-955d-3d6a8b5e25d0}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\EPMI.ServiceControl.BusinessObjects\EPMI.ServiceControl.BusinessObjects.csproj">
-      <Name>EPMI.ServiceControl.BusinessObjects</Name>
+    <ProjectReference Include="..\EPMI.ServiceControl.BusinessObjects\ServiceControl.BusinessObjects.csproj">
+      <Name>ServiceControl.BusinessObjects</Name>
       <Project>{c4376d56-33e0-411a-a4a9-db8cd5788db7}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\EPMI.ServiceControl.Utility\EPMI.ServiceControl.Utility.csproj">
-      <Name>EPMI.ServiceControl.Utility</Name>
+    <ProjectReference Include="..\EPMI.ServiceControl.Utility\ServiceControl.Utility.csproj">
+      <Name>ServiceControl.Utility</Name>
       <Project>{69cacd7f-d599-4954-906e-ecc5afe2e8d1}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\EPMI.ServiceControl.WPF\EPMI.ServiceControl.WPF.csproj">
-      <Name>EPMI.ServiceControl.WPF</Name>
+    <ProjectReference Include="..\EPMI.ServiceControl.WPF\ServiceControl.WPF.csproj">
+      <Name>ServiceControl.WPF</Name>
       <Project>{45813541-764c-4e37-aed8-b9b7536f6b82}</Project>
-      <Private>True</Private>
-      <DoNotHarvest>True</DoNotHarvest>
-      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
-      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
-    </ProjectReference>
-    <ProjectReference Include="..\EPMI.UI\EPMI.UI.csproj">
-      <Name>EPMI.UI</Name>
-      <Project>{de07041c-ed78-4854-a22c-27cfd36c83d9}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
@@ -83,6 +75,8 @@
     <Content Include="epmi_installerbanner_sm.jpg" />
     <Content Include="epmi_installerBG.png" />
     <Content Include="epmi_installerBG_sm.jpg" />
+    <Content Include="epmjunkie_installbanner_sm.jpg" />
+    <Content Include="epmjunkie_installBG_sm.jpg" />
     <Content Include="License.rtf" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
