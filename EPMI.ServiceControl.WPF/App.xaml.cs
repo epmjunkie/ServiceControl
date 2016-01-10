@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Windows;
-using EPMI.Core;
+﻿using System.Windows;
+using EPMJunkie.Core.Encryption;
 
-namespace EPMI.ServiceControl.WPF
+namespace ServiceControl.WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -16,7 +11,7 @@ namespace EPMI.ServiceControl.WPF
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            EPMI.Core.Encryption.AES.EncryptionKey = "IlikeToDoWhatIDoItsThatVoodoo";
+            AES.EncryptionKey = "IlikeToDoWhatIDoItsThatVoodoo";
             if (e.Args.Length > 0)
                 switch (e.Args[0].ToLower())
                 {

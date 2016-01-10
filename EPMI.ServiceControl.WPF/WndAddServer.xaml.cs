@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using EPMI.UI;
-using EPMI.Core;
-using BO = EPMI.ServiceControl.BusinessObjects;
+using BO = ServiceControl.BusinessObjects;
 using Ssh = Renci.SshNet;
 using System.Xml;
 using System.Text.RegularExpressions;
+using EPMJunkie.Core.Encryption;
 
-namespace EPMI.ServiceControl.WPF
+namespace ServiceControl.WPF
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
@@ -47,7 +39,7 @@ namespace EPMI.ServiceControl.WPF
                     Value = tbxHost.Text,
                     IsSSH = IsSSH.IsChecked ?? false,
                     Username = tbxUsername.Text,
-                    Password = (string.IsNullOrEmpty(tbxPassword.Password) ? Password : EPMI.Core.Encryption.AES.EncryptString(tbxPassword.Password)),
+                    Password = (string.IsNullOrEmpty(tbxPassword.Password) ? Password : AES.EncryptString(tbxPassword.Password)),
                     Domain = tbxDomain.Text,
                     Path = tbxUnixPath.Text,
                     IsChecked = IsChecked ?? true
@@ -113,13 +105,13 @@ namespace EPMI.ServiceControl.WPF
             try
             {
                 var KeyboardInteractive = new Ssh.KeyboardInteractiveAuthenticationMethod(Host.Username);
-                var Password = new Ssh.PasswordAuthenticationMethod(Host.Username, EPMI.Core.Encryption.AES.DecryptString(Host.Password));
+                var Password = new Ssh.PasswordAuthenticationMethod(Host.Username, AES.DecryptString(Host.Password));
                 var encryptedPassword = Host.Password;
                 KeyboardInteractive.AuthenticationPrompt += delegate(object sender1, Ssh.Common.AuthenticationPromptEventArgs e1)
                 {
                     foreach (var prompt in e1.Prompts)
                         if (prompt.Request.ToLower().Contains("password"))
-                            prompt.Response = EPMI.Core.Encryption.AES.DecryptString(encryptedPassword);
+                            prompt.Response = AES.DecryptString(encryptedPassword);
                 };
                 var conn = new Ssh.ConnectionInfo(Host.Value,
                     Host.Username,

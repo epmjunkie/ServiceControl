@@ -1,10 +1,10 @@
-﻿<Window x:Class="EPMI.ServiceControl.WPF.WndAddServer"
+﻿<Window x:Class="ServiceControl.WPF.WndAddServer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:EPMI.UI;assembly=EPMI.UI"
+        xmlns:ui="clr-namespace:EPMJunkie.Core.UI;assembly=EPMJunkie.Core"
         Title="Server Information" Height="239" Width="337" ResizeMode="NoResize" Name="wndAddServer" AllowsTransparency="False">
     <Window.Resources>
-        <local:Helper x:Key="Helper" />
+        <ui:Helper x:Key="Helper" />
     </Window.Resources>
     <Grid>
         <TabControl Name="tabControl1" Margin="0,0,0,31">

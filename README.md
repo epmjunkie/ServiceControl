@@ -1,4 +1,4 @@
-# EPMI Service Control
+# EPM Service Control
 
 Please download the latest version and unzip. No install required.
 

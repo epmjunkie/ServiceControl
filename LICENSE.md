@@ -1,4 +1,4 @@
-Copyright (c) 2015, EPM Intelligence
+Copyright (c) 2015, Keith Kikta
 
 All rights reserved.
 

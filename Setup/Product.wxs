@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <?define Version = "!(bind.fileVersion.EPMIServiceControlWPF1)" ?>
+  <?define Version = "!(bind.fileVersion.ServiceControlWPF1)" ?>
   <?define UpgradeCode = "4cbcf12c-daa1-42ca-a52b-4c7d270c082a" ?>
 
-  <Product Id="*" Name="EPMI Service Control" Language="1033" Version="$(var.Version)" Manufacturer="EPM Intelligence, LLC." UpgradeCode="$(var.UpgradeCode)">
+  <Product Id="*" Name="EPM Service Control" Language="1033" Version="$(var.Version)" Manufacturer="Keith Kikta" UpgradeCode="$(var.UpgradeCode)">
 
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
@@ -17,7 +17,7 @@
       <Custom Action="NewerVersion" After="FindRelatedProducts">NEWERVERSIONDETECTED</Custom>
     </InstallExecuteSequence>
 
-    <CustomAction Id="NewerVersion" Error="A newer version of EPMI Service Control is already installed." />
+    <CustomAction Id="NewerVersion" Error="A newer version of EPM Service Control is already installed." />
 
     <!--<MediaTemplate />-->
     <Media Id="1" Cabinet="ServiceControl.cab" EmbedCab="yes"  />
@@ -29,8 +29,8 @@
     </Feature>
 
     <!-- Display License -->
-    <WixVariable Id="WixUIBannerBmp" Value="epmi_installerbanner_sm.jpg" />
-    <WixVariable Id="WixUIDialogBmp" Value="epmi_installerBG_sm.jpg" />
+    <WixVariable Id="WixUIBannerBmp" Value="epmjunkie_installbanner_sm.jpg" />
+    <WixVariable Id="WixUIDialogBmp" Value="epmjunkie_installBG_sm.jpg" />
     <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
     
     <UIRef Id="ServiceControlUI" />
@@ -42,7 +42,7 @@
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="COMPANYFOLDER" Name="EPM Intelligence">
+        <Directory Id="COMPANYFOLDER" Name="EPM Junkie">
           <Directory Id="INSTALLFOLDER" Name="Service Control">
             <Directory Id="PROFILE" Name="Profiles" />
           </Directory>
@@ -50,7 +50,7 @@
       </Directory>
       <Directory Id="DesktopFolder" />
       <Directory Id="ProgramMenuFolder">
-        <Directory Id="ApplicationProgramsFolder" Name="EPMI Service Control" />
+        <Directory Id="ApplicationProgramsFolder" Name="EPM Service Control" />
       </Directory>
     </Directory>
   </Fragment>
@@ -59,58 +59,55 @@
     <DirectoryRef Id="ApplicationProgramsFolder">
       <Component Id="ApplicationSortcut" Guid="C79952DC-4290-4734-9D0F-82E175F11576">
         <Shortcut Id="ApplicationStartMenuShortcut"
-                  Name="EPMI Service Control"
+                  Name="EPM Service Control"
                   Description="Start and Stop Services"
                   WorkingDirectory="INSTALLFOLDER"
                   Target="[INSTALLFOLDER]ServiceControl.WPF.exe"
                   Advertise="no" />
         <Shortcut Id="UninstallProduct"
-                  Name="Uninstall EPMI Service Control"
-                  Description="Uninstalls EPMI Service Control"
+                  Name="Uninstall EPM Service Control"
+                  Description="Uninstalls EPM Service Control"
                   Target="[System64Folder]msiexec.exe"
                   Arguments="/x [ProductCode]"/>
         <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
-        <RegistryValue Root="HKCU" Key="Software\EPMI\Service Control" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+        <RegistryValue Root="HKCU" Key="Software\EPMJunkie\Service Control" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
       </Component>
     </DirectoryRef>
   </Fragment>
   
   <Fragment>
     <ComponentGroup Id="ServiceControl" Directory="INSTALLFOLDER">
-      <Component Id="EPMI.ServiceControl.WPF" Guid="5CDD2A95-3C20-42D0-9857-3DE37231804E">
-        <File Id="EPMIServiceControlWPF1" Source="$(var.EPMI.ServiceControl.WPF.TargetPath)" KeyPath="yes" />
+      <Component Id="ServiceControl.WPF" Guid="5CDD2A95-3C20-42D0-9857-3DE37231804E">
+        <File Id="ServiceControlWPF1" Source="$(var.ServiceControl.WPF.TargetPath)" KeyPath="yes" />
       </Component>
-      <Component Id="EPMI.ServiceControl.BusinessObjects">
-        <File Id="EPMI.ServiceControl.BusinessObjects" Source="$(var.EPMI.ServiceControl.BusinessObjects.TargetPath)" />
+      <Component Id="ServiceControl.BusinessObjects">
+        <File Id="ServiceControl.BusinessObjects" Source="$(var.ServiceControl.BusinessObjects.TargetPath)" />
       </Component>
-      <Component Id="EPMI.ServiceControl.Utility">
-        <File Id="EPMI.ServiceControl.Utility" Source="$(var.EPMI.ServiceControl.Utility.TargetPath)" />
+      <Component Id="ServiceControl.Utility">
+        <File Id="ServiceControl.Utility" Source="$(var.ServiceControl.Utility.TargetPath)" />
       </Component>
-      <Component Id="EPMI.Core">
-        <File Id="EPMI.Core" Source="$(var.EPMI.Core.TargetPath)" />
-      </Component>
-      <Component Id="EPMI.UI">
-        <File Id="EPMI.UI" Source="$(var.EPMI.UI.TargetPath)" />
+      <Component Id="EPMJunkie.Core">
+        <File Id="EPMJunkie.Core" Source="$(var.EPMJunkie.Core.TargetPath)" />
       </Component>
       <Component Id="Renci.SshNet.dll">
-        <File Id="Renci.SshNet.dll" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Renci.SshNet.dll" />
+        <File Id="Renci.SshNet.dll" Source="$(var.ServiceControl.WPF.TargetDir)Renci.SshNet.dll" />
       </Component>
       <Component Id="License">
-        <File Id="Licnese" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)LICENSE" />
+        <File Id="Licnese" Source="$(var.ServiceControl.WPF.TargetDir)LICENSE" />
       </Component>
       <Component Id="Renci.SshNet.License">
-        <File Id="Renci.SshNet.License" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Renci.SshNet.License" />
+        <File Id="Renci.SshNet.License" Source="$(var.ServiceControl.WPF.TargetDir)Renci.SshNet.License" />
       </Component>
     </ComponentGroup>
     <ComponentGroup Id="Profiles" Directory="PROFILE">
       <Component Id="Default.host">
-        <File Id="Default.host" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Profiles\Default.host" />
+        <File Id="Default.host" Source="$(var.ServiceControl.WPF.TargetDir)Profiles\Default.host" />
       </Component>
       <Component Id="Default.service">
-        <File Id="Default.service" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Profiles\Default.service" />
+        <File Id="Default.service" Source="$(var.ServiceControl.WPF.TargetDir)Profiles\Default.service" />
       </Component>
       <Component Id="Custom.service">
-        <File Id="Custom.service" Source="$(var.EPMI.ServiceControl.WPF.TargetDir)Profiles\Custom.service" />
+        <File Id="Custom.service" Source="$(var.ServiceControl.WPF.TargetDir)Profiles\Custom.service" />
       </Component>
     </ComponentGroup>
   </Fragment>
