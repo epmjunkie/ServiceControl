@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 using System.Xml.Serialization;
-using System.ServiceModel;
-using EPMI.Core.Extensions;
 using System.Runtime.Serialization;
 using System.Xml;
+using EPMJunkie.Core.Extensions;
 
-namespace EPMI.ServiceControl.BusinessObjects
+namespace ServiceControl.BusinessObjects
 {
     [XmlRoot(ElementName="profiles", IsNullable=true)]
     [DataContract(Name="profiles")]

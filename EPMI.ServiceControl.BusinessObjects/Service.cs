@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.ServiceProcess;
 using System.Xml.Serialization;
 using System.Runtime.Serialization;
-using System.ServiceModel;
 using System.Xml;
 using System.ComponentModel;
-using EPMI.Core;
+using EPMJunkie.Core;
+using EPMJunkie.Core.Encryption;
 
-namespace EPMI.ServiceControl.BusinessObjects
+namespace ServiceControl.BusinessObjects
 {
     [XmlRoot(ElementName = "service")]
     [DataContract(Name="service")]
@@ -87,7 +84,7 @@ namespace EPMI.ServiceControl.BusinessObjects
             try
             {
                 if (!(string.IsNullOrEmpty(this.Username) || string.IsNullOrEmpty(this.Password)))
-                    iu.Impersonate(this.Domain, this.Username, EPMI.Core.Encryption.AES.DecryptString(this.Password));
+                    iu.Impersonate(this.Domain, this.Username, AES.DecryptString(this.Password));
                 using (ServiceController sc = new ServiceController(this.Value, this.Host))
                 {
                     OnLog(new LogEventArgs(string.Format("Starting {0} on {1}", this.Name, this.Server)));
@@ -118,7 +115,7 @@ namespace EPMI.ServiceControl.BusinessObjects
             try
             {
                 if (!(string.IsNullOrEmpty(this.Username) || string.IsNullOrEmpty(this.Password)))
-                    iu.Impersonate(this.Domain, this.Username, EPMI.Core.Encryption.AES.DecryptString(this.Password));
+                    iu.Impersonate(this.Domain, this.Username, AES.DecryptString(this.Password));
                 using (ServiceController sc = new ServiceController(this.Value, this.Host))
                 {
                     OnLog(new LogEventArgs(string.Format("Stopping {0} on {1}", this.Name, this.Server)));

@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EPMI.ServiceControl.BusinessObjects")]
+[assembly: AssemblyTitle("ServiceControl.BusinessObjects")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("EPM Intelligence, LLC.")]
-[assembly: AssemblyProduct("EPMI.ServiceControl.BusinessObjects")]
-[assembly: AssemblyCopyright("Copyright © EPM Intelligence, LLC. 2012")]
+[assembly: AssemblyCompany("Keith Kikta")]
+[assembly: AssemblyProduct("ServiceControl.BusinessObjects")]
+[assembly: AssemblyCopyright("Copyright © Keith Kikta 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

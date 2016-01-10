@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml.Serialization;
 using System.Runtime.Serialization;
-using System.ServiceModel;
 using System.Xml;
-using System.IO;
 using System.Net.Sockets;
 using System.ComponentModel;
+using EPMJunkie.Core.Encryption;
 
-namespace EPMI.ServiceControl.BusinessObjects
+namespace ServiceControl.BusinessObjects
 {
     [Serializable]
     [XmlRoot(ElementName = "host")]
@@ -53,7 +50,7 @@ namespace EPMI.ServiceControl.BusinessObjects
         #region Private Methods
         bool IProfileItem.Start()
         {
-            using (Renci.SshNet.SshClient client = new Renci.SshNet.SshClient(Value, Username, EPMI.Core.Encryption.AES.DecryptString(Password)))
+            using (Renci.SshNet.SshClient client = new Renci.SshNet.SshClient(Value, Username, AES.DecryptString(Password)))
             {
                 try
                 {
@@ -71,7 +68,7 @@ namespace EPMI.ServiceControl.BusinessObjects
         }
         bool IProfileItem.Stop()
         {
-            using (Renci.SshNet.SshClient client = new Renci.SshNet.SshClient(Value, Username, EPMI.Core.Encryption.AES.DecryptString(Password)))
+            using (Renci.SshNet.SshClient client = new Renci.SshNet.SshClient(Value, Username, AES.DecryptString(Password)))
             {
                 try
                 {

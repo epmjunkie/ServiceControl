@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using EPMI.Core.Extensions;
-using BO = EPMI.ServiceControl.BusinessObjects;
+using BO = ServiceControl.BusinessObjects;
 using System.Xml;
 using System.Xml.Serialization;
-using EPMI.Core;
+using EPMJunkie.Core;
+using EPMJunkie.Core.Encryption;
+using EPMJunkie.Core.Extensions;
 
-namespace EPMI.ServiceControl.Utility
+namespace ServiceControl.Utility
 {
     public class Host
     {
@@ -87,7 +87,7 @@ namespace EPMI.ServiceControl.Utility
             {
                 ImpersonateUser iu = new ImpersonateUser();
                 if (!(string.IsNullOrEmpty(host.Username) || string.IsNullOrEmpty(host.Password)))
-                    iu.Impersonate(host.Domain, host.Username, EPMI.Core.Encryption.AES.DecryptString(host.Password));
+                    iu.Impersonate(host.Domain, host.Username, AES.DecryptString(host.Password));
                 System.ServiceProcess.ServiceController[] sc = System.ServiceProcess.ServiceController.GetServices(host.Value);
                 foreach (var s in sc)
                 {

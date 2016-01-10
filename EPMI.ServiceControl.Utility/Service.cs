@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using EPMI.Core.Extensions;
-using BO = EPMI.ServiceControl.BusinessObjects;
+using EPMJunkie.Core.Extensions;
+using BO = ServiceControl.BusinessObjects;
 
-namespace EPMI.ServiceControl.Utility
+namespace ServiceControl.Utility
 {
     public class Service
     {
