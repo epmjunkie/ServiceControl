@@ -172,20 +172,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EPMI.Core\EPMJunkie.Core.csproj">
-      <Project>{0D81E327-ACCD-4A65-955D-3D6A8B5E25D0}</Project>
-      <Name>EPMJunkie.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EPMI.ServiceControl.BusinessObjects\ServiceControl.BusinessObjects.csproj">
-      <Project>{C4376D56-33E0-411A-A4A9-DB8CD5788DB7}</Project>
-      <Name>ServiceControl.BusinessObjects</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EPMI.ServiceControl.Utility\ServiceControl.Utility.csproj">
-      <Project>{69CACD7F-D599-4954-906E-ECC5AFE2E8D1}</Project>
-      <Name>ServiceControl.Utility</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
