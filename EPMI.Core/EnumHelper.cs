@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace EPMI.Core
+namespace EPMJunkie.Core
 {
     public static class EnumHelper
     {

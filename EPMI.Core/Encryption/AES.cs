@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace EPMI.Core.Encryption
+namespace EPMJunkie.Core.Encryption
 {
     public class AES
     {

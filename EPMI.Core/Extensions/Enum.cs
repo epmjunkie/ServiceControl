@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Reflection;
 
-namespace EPMI.Core.Extensions
+namespace EPMJunkie.Core.Extensions
 {
     public static class EnumExtension
     {

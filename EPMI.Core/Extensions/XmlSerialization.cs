@@ -1,10 +1,9 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace EPMI.Core.Extensions
+namespace EPMJunkie.Core.Extensions
 {
     public static class XmlSerializationExtension
     {
